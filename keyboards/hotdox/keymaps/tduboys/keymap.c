@@ -81,7 +81,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        VRSN,    KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,
        KC_TRNS, KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-       KC_TRNS, KC_CUT,  KC_COPY, KC_PSTE, KC_UNDO, KC_AGIN, KC_TRNS,
+       KC_TRNS, KC_FN0,  KC_FN1,  KC_FN2,  KC_FN3,  KC_FN4, KC_TRNS,
        EEP_RST, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                                        RGB_MOD,KC_TRNS,
                                                KC_TRNS,
@@ -137,6 +137,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_VOLU,
        KC_VOLD, KC_MNXT, KC_MPLY
 ),
+};
+
+// Fn action definition
+const uint16_t PROGMEM fn_actions[] = {
+  [0] = ACTION_MODS_KEY(MOD_LCTL, KC_C),                // FN0 - Ctrl X
+  [1] = ACTION_MODS_KEY(MOD_LCTL, KC_H),                // FN1 - Ctrl C
+  [2] = ACTION_MODS_KEY(MOD_LCTL, KC_U),                // FN2 - Ctrl V
+  [3] = ACTION_MODS_KEY(MOD_LCTL, KC_LBRC),             // FN3 - Ctrl Z (undo)
+  [4] = ACTION_MODS_KEY(MOD_LCTL | MOD_LSFT, KC_LBRC),  // FN4 - Ctrl Maj Z (redo)
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
