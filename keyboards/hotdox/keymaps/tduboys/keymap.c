@@ -57,15 +57,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 1: Symbol Layer
  *
  * ,---------------------------------------------------.           ,--------------------------------------------------.
- * |Version  |  F1  |  F2  |  F3  |  F4  |  F5  |      |           |      |  F6  |  F7  |  F8  |  F9  |  F10 |   F11  |
+ * |Version  |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |           | NLck |      |      |   /  |   *  |   -  | PrntSc |
  * |---------+------+------+------+------+------+------|           |------+------+------+------+------+------+--------|
- * |         |      |      |      |      |      |      |           | Num  |   /  |   7  |   8  |   9  |   +  |   F12  |
+ * |         |  F7  |  F8  |  F9  |  F10 |  F11 |  F12 |           | Num  |      |   7  |   8  |   9  |   +  | Pause  |
  * |---------+------+------+------+------+------|      |           | Lock |------+------+------+------+------+--------|
- * |         |      |      |      |      |      |------|           |------|   *  |   4  |   5  |   6  |   ,  |        |
+ * |         |      |      |      |      |      |------|           |------|      |   4  |   5  |   6  |   ,  | Insert |
  * |---------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |         | Cut  | Copy | Paste| Undo | Redo |      |           |      |   -  |   1  |   2  |   3  |   =  |        |
+ * |         | Cut  | Copy | Paste| Undo | Redo |      |           |      |      |   1  |   2  |   3  |   =  |        |
  * `---------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- * | EEP_RST  |      |      |      |      |                                       |      |  0  |   .  | Enter|      |
+ * | EEP_RST |      |      |      |      |                                       |      |   0  |   .  | Enter|      |
  *   `-----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
  *                                        |Animat|      |       |Toggle|Solid |
@@ -78,8 +78,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // SYMBOLS
 [SYMB] = LAYOUT_ergodox(
        // left hand
-       VRSN,    KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_TRNS,
-       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+       VRSN,    KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,
+       KC_TRNS, KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
        KC_TRNS, KC_CUT,  KC_COPY, KC_PSTE, KC_UNDO, KC_AGIN, KC_TRNS,
        EEP_RST, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
@@ -87,9 +87,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                KC_TRNS,
                                RGB_VAD,RGB_VAI,KC_TRNS,
        // right hand
-       KC_TRNS, KC_F6,   KC_F7,  KC_F8,   KC_F9,   KC_F10,  KC_F11,
-       KC_NLCK, KC_PSLS, KC_P7,  KC_P8,   KC_P9,   KC_PPLS, KC_F12,
-                KC_PAST, KC_P4,  KC_P5,   KC_P6,   KC_PCMM, KC_TRNS,
+       KC_NLCK, KC_TRNS, KC_TRNS,KC_PSLS, KC_PAST, KC_PMNS, KC_PSCR,
+       KC_NLCK, KC_PSLS, KC_P7,  KC_P8,   KC_P9,   KC_PPLS, KC_PAUS,
+                KC_PAST, KC_P4,  KC_P5,   KC_P6,   KC_PCMM, KC_INS,
        KC_TRNS, KC_PMNS, KC_P1,  KC_P2,   KC_P3,   KC_PEQL, KC_TRNS,
                          KC_TRNS,KC_P0,   KC_PDOT, KC_ENT,  KC_TRNS,
        RGB_TOG, RGB_SLD,
