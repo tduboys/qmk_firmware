@@ -14,7 +14,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
- * |  Esc   |   1  |   2  |   3  |   4  |   5  | Grv  |           |   =  |   6  |   7  |   8  |   9  |   0  |   -    |
+ * |  Esc   |   1  |   2  |   3  |   4  |   5  | Grv  |           |=/LGui|   6  |   7  |   8  |   9  |   0  |   -    |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
  * |   ]    |   Q  |   W  |   E  |   R  |   T  |  Ent |           | Bkp  |   Y  |   U  |   I  |   O  |   P  |   [    |
  * |--------+------+------+------+------+------|      |           | spce |------+------+------+------+------+--------|
@@ -45,10 +45,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                               TT(MDIA),
                                                KC_SPC,KC_BSPC,TT(SYMB),
         // right hand
-             LGUI(KC_EQL),KC_6,   KC_7,   KC_8,   KC_9,   KC_0,             KC_MINS,
-             KC_BSPC,     KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,             KC_LBRC,
-                          KC_H,   KC_J,   KC_K,   KC_L,   LT(MDIA, KC_SCLN),RCTL_T(KC_QUOT),
-             KC_DEL,      KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,          KC_RSFT,
+             LGUI_T(KC_EQL),KC_6,   KC_7,   KC_8,   KC_9,   KC_0,             KC_MINS,
+             KC_BSPC,       KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,             KC_LBRC,
+                            KC_H,   KC_J,   KC_K,   KC_L,   LT(MDIA, KC_SCLN),RCTL_T(KC_QUOT),
+             KC_DEL,        KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,          KC_RSFT,
                                   KC_LEFT,KC_UP,  KC_DOWN,KC_RIGHT,         KC_RALT,
              KC_APP,      KC_RGUI,
              TT(MDIA),
