@@ -16,11 +16,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,--------------------------------------------------.           ,--------------------------------------------------.
  * |  Esc   |   1  |   2  |   3  |   4  |   5  | Grv  |           |=/LGui|   6  |   7  |   8  |   9  |   0  |   -    |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * |   ]    |   Q  |   W  |   E  |   R  |   T  |  Ent |           | Bkp  |   Y  |   U  |   I  |   O  |   P  |   [    |
+ * |   /    |   Q  |   W  |   E  |   R  |   T  |  Ent |           | Bkp  |   Y  |   U  |   I  |   O  |   P  |   [    |
  * |--------+------+------+------+------+------|      |           | spce |------+------+------+------+------+--------|
- * | \ /LCtl|   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |; / L2| ' /RCtl|
+ * | \ /LCtl|   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |; / L2| ] /RCtl|
  * |--------+------+------+------+------+------| Tab  |           | Del  |------+------+------+------+------+--------|
- * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |   /  | RShift |
+ * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |   '  | RShift |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
  *   | LAlt | Home | PgUp | PgDn |End/L1|                                       | Left |  Up  | Down | Rght | RAlt |
  *   `----------------------------------'                                       `----------------------------------'
@@ -37,7 +37,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [BASE] = LAYOUT_ergodox(  // layer 0 : default
         // left hand
         KC_ESC,          KC_1,         KC_2,    KC_3,    KC_4,           KC_5,   KC_GRV,
-        KC_RBRC,         KC_Q,         KC_W,    KC_E,    KC_R,           KC_T,   KC_ENT,
+        KC_SLSH,         KC_Q,         KC_W,    KC_E,    KC_R,           KC_T,   KC_ENT,
         LCTL_T(KC_BSLS), KC_A,         KC_S,    KC_D,    KC_F,           KC_G,
         KC_LSFT,         KC_Z,         KC_X,    KC_C,    KC_V,           KC_B,   KC_TAB,
         KC_LALT,         KC_HOME,      KC_PGUP, KC_PGDN, LT(SYMB, KC_END),
@@ -47,8 +47,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // right hand
              LGUI_T(KC_EQL),KC_6,   KC_7,    KC_8,    KC_9,    KC_0,              KC_MINS,
              KC_BSPC,       KC_Y,   KC_U,    KC_I,    KC_O,    KC_P,              KC_LBRC,
-                            KC_H,   KC_J,    KC_K,    KC_L,    LT(MDIA, KC_SCLN), RCTL_T(KC_QUOT),
-             KC_DEL,        KC_N,   KC_M,    KC_COMM, KC_DOT,  KC_SLSH,           KC_RSFT,
+                            KC_H,   KC_J,    KC_K,    KC_L,    LT(MDIA, KC_SCLN), RCTL_T(KC_RBRC),
+             KC_DEL,        KC_N,   KC_M,    KC_COMM, KC_DOT,  KC_QUOT,           KC_RSFT,
                                     KC_LEFT, KC_UP,   KC_DOWN, KC_RIGHT,          KC_RALT,
              KC_APP,      KC_RGUI,
              TT(MDIA),
@@ -57,15 +57,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 1: Symbol Layer
  *
  * ,---------------------------------------------------.           ,--------------------------------------------------.
- * |Version  |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |           | NLck |      |      |   /  |   *  |   -  | PrntSc |
+ * |Version  |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |           | NLck | PrtSc|      |      |   /  |   *  |    -   |
  * |---------+------+------+------+------+------+------|           |------+------+------+------+------+------+--------|
- * |         |  F7  |  F8  |  F9  |  F10 |  F11 |  F12 |           | Num  |      |   7  |   8  |   9  |   +  | Pause  |
+ * |         |  F7  |  F8  |  F9  |  F10 |  F11 |  F12 |           | Num  | Pause|      |   7  |   8  |   9  |    +   |
  * |---------+------+------+------+------+------|      |           | Lock |------+------+------+------+------+--------|
- * |         |      |      |      |      |      |------|           |------|      |   4  |   5  |   6  |   ,  | Insert |
+ * |         |      |      |      |      |      |------|           |------| Insrt|      |   4  |   5  |   6  |    ,   |
  * |---------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |         | Cut  | Copy | Paste| Undo | Redo |      |           |      |      |   1  |   2  |   3  |   =  |        |
+ * |         | Cut  | Copy | Paste| Undo | Redo |      |           |      |      |      |   1  |   2  |   3  |    =   |
  * `---------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- * | EEP_RST |      |      |      |      |                                       |      |   0  |   .  | Enter|      |
+ * | EEP_RST |      |      |      |      |                                       |      |   0  |   .  |      | Enter|
  *   `-----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
  *                                        |Animat|      |       |Toggle|Solid |
@@ -87,11 +87,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                KC_TRNS,
                                RGB_VAD,RGB_VAI,KC_TRNS,
        // right hand
-       KC_NLCK, KC_TRNS, KC_TRNS,KC_PSLS, KC_PAST, KC_PMNS, KC_PSCR,
-       KC_NLCK, KC_PSLS, KC_P7,  KC_P8,   KC_P9,   KC_PPLS, KC_PAUS,
-                KC_PAST, KC_P4,  KC_P5,   KC_P6,   KC_PCMM, KC_INS,
-       KC_TRNS, KC_PMNS, KC_P1,  KC_P2,   KC_P3,   KC_PEQL, KC_TRNS,
-                         KC_TRNS,KC_P0,   KC_PDOT, KC_ENT,  KC_TRNS,
+       KC_NLCK, KC_PSCR, KC_TRNS, KC_TRNS, KC_PSLS, KC_PAST, KC_PMNS,
+       KC_NLCK, KC_PAUS, KC_TRNS, KC_P7,   KC_P8,   KC_P9,   KC_PPLS,
+                KC_INS,  KC_TRNS, KC_P4,   KC_P5,   KC_P6,   KC_PCMM,
+       KC_TRNS, KC_TRNS, KC_TRNS, KC_P1,   KC_P2,   KC_P3,   KC_PEQL,
+                         KC_TRNS, KC_P0,   KC_PDOT, KC_TRNS, KC_ENT,
        RGB_TOG, RGB_SLD,
        KC_TRNS,
        KC_TRNS, RGB_HUD, RGB_HUI
