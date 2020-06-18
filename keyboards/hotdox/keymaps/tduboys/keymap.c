@@ -65,14 +65,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |---------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * |         | Cut  | Copy | Paste| Undo | Redo |      |           |      |      |      |   1  |   2  |   3  |    =   |
  * `---------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- * | EEP_RST |      |      |      |      |                                       |      |   0  |   .  |      | Enter|
+ * | EEP_RST |      |      |      |      |                                       |   0  |   0  |   .  |      | Enter|
  *   `-----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
- *                                        |Animat|      |       |Toggle|Solid |
+ *                                        |      |      |       | Mute | Prev |
  *                                 ,------|------|------|       |------+------+------.
- *                                 |Bright|Bright|      |       |      |Hue-  |Hue+  |
- *                                 |ness- |ness+ |------|       |------|      |      |
- *                                 |      |      |      |       |      |      |      |
+ *                                 |Bright|Bright|      |       | Vol+ |      |      |
+ *                                 |ness- |ness+ |------|       |------| Next | Play |
+ *                                 |      |      |      |       | Vol- |      |      |
  *                                 `--------------------'       `--------------------'
  */
 // SYMBOLS
@@ -83,18 +83,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
        KC_TRNS, KC_FN0,  KC_FN1,  KC_FN2,  KC_FN3,  KC_FN4, KC_TRNS,
        EEP_RST, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-                                       RGB_MOD,KC_TRNS,
+                                       KC_TRNS,KC_TRNS,
                                                KC_TRNS,
-                               RGB_VAD,RGB_VAI,KC_TRNS,
+                               KC_BRID,KC_BRIU,KC_TRNS,
        // right hand
        KC_NLCK, KC_PSCR, KC_TRNS, KC_TRNS, KC_PSLS, KC_PAST, KC_PMNS,
        KC_NLCK, KC_PAUS, KC_TRNS, KC_P7,   KC_P8,   KC_P9,   KC_PPLS,
                 KC_INS,  KC_TRNS, KC_P4,   KC_P5,   KC_P6,   KC_PCMM,
        KC_TRNS, KC_TRNS, KC_TRNS, KC_P1,   KC_P2,   KC_P3,   KC_PEQL,
-                         KC_TRNS, KC_P0,   KC_PDOT, KC_TRNS, KC_ENT,
-       RGB_TOG, RGB_SLD,
-       KC_TRNS,
-       KC_TRNS, RGB_HUD, RGB_HUI
+                         KC_P0,   KC_P0,   KC_PDOT, KC_NO,   KC_ENT,
+       KC_MUTE, KC_MPRV,
+       KC_VOLU,
+       KC_VOLD, KC_MNXT, KC_MPLY
 ),
 /* Keymap 2: Media and mouse keys
  *
