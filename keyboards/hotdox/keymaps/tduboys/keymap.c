@@ -18,7 +18,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
  * |   /    |   Q  |   W  |   E  |   R  |   T  |  Ent |           | Bkp  |   Y  |   U  |   I  |   O  |   P  |   [    |
  * |--------+------+------+------+------+------|      |           | spce |------+------+------+------+------+--------|
- * | \ /LCtl|   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |; / L2| ] /RCtl|
+ * | \ /LCtl|   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  | ] /RCtl|
  * |--------+------+------+------+------+------| Tab  |           | Del  |------+------+------+------+------+--------|
  * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |   '  | RShift |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
@@ -27,9 +27,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                        ,-------------.       ,-------------.
  *                                        | LGui | LAlt |       | Menu | RGui |
  *                                 ,------|------|------|       |------+--------+------.
- *                                 |      |      | ~L2  |       | ~L2  |        |      |
+ *                                 |      |      |  L2  |       |  L2  |        |      |
  *                                 | Space|Backsp|------|       |------|  Enter | Space|
- *                                 |      |ace   | ~L1  |       | ~L1  |        |      |
+ *                                 |      |ace   |  L1  |       |  L1  |        |      |
  *                                 `--------------------'       `----------------------'
  */
 // If it accepts an argument (i.e, is a function), it doesn't need KC_.
@@ -42,17 +42,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LSFT,         KC_Z,         KC_X,    KC_C,    KC_V,           KC_B,   KC_TAB,
         KC_LALT,         KC_HOME,      KC_PGUP, KC_PGDN, LT(SYMB, KC_END),
                                                     KC_LGUI,  KC_LALT,
-                                                              TT(MDIA),
-                                               KC_SPC,KC_BSPC,TT(SYMB),
+                                                              LT(MDIA,KC_NO),
+                                               KC_SPC,KC_BSPC,LT(SYMB,KC_NO),
         // right hand
              LGUI_T(KC_EQL),KC_6,   KC_7,    KC_8,    KC_9,    KC_0,              KC_MINS,
              KC_BSPC,       KC_Y,   KC_U,    KC_I,    KC_O,    KC_P,              KC_LBRC,
-                            KC_H,   KC_J,    KC_K,    KC_L,    LT(MDIA, KC_SCLN), RCTL_T(KC_RBRC),
+                            KC_H,   KC_J,    KC_K,    KC_L,    KC_SCLN,           RCTL_T(KC_RBRC),
              KC_DEL,        KC_N,   KC_M,    KC_COMM, KC_DOT,  KC_QUOT,           KC_RSFT,
                                     KC_LEFT, KC_UP,   KC_DOWN, KC_RIGHT,          KC_RALT,
              KC_APP,      KC_RGUI,
-             TT(MDIA),
-             TT(SYMB),KC_ENT,KC_SPC
+             LT(MDIA,KC_NO),
+             LT(SYMB,KC_NO),KC_ENT,KC_SPC
     ),
 /* Keymap 1: Symbol Layer
  *
